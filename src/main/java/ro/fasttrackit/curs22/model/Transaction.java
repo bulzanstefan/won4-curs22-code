@@ -10,14 +10,20 @@ public class Transaction {
     @GeneratedValue
     private int id;
     private String description;
+    private TransactionType type;
     private double amount;
 
     protected Transaction() {
     }
 
     public Transaction(String description, double amount) {
+        this(description, TransactionType.BUY, amount);
+    }
+
+    public Transaction(String description, TransactionType type, double amount) {
         this.description = description;
         this.amount = amount;
+        this.type = type;
     }
 
     public int getId() {
@@ -30,5 +36,9 @@ public class Transaction {
 
     public double getAmount() {
         return amount;
+    }
+
+    public TransactionType getType() {
+        return type;
     }
 }
