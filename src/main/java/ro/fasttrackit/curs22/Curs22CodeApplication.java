@@ -9,6 +9,8 @@ import ro.fasttrackit.curs22.repository.TransactionRepository;
 
 import java.util.List;
 
+import static ro.fasttrackit.curs22.model.TransactionType.BUY;
+
 @SpringBootApplication
 public class Curs22CodeApplication {
 
@@ -21,9 +23,11 @@ public class Curs22CodeApplication {
         return args -> {
             repo.saveAll(List.of(
                     new Transaction("Masa", 2.2),
-                    new Transaction("Apa", 223),
+                    new Transaction("Apa are mere", 223),
                     new Transaction("Laptop", 1.22),
                     new Transaction("Mancare", 242)));
+            System.out.println(repo.byIdAndDescriptionCustom(2, "%are%"));
+            System.out.println(repo.byTypeCustom(BUY));
         };
     }
 }

@@ -39,8 +39,8 @@
             <td data-th-text="${transaction.amount}"></td>
             <td data-th-id="${transaction.id}">
                 <i class="fa fa-trash delete-icon"></i>
-                <i class="fa fa-pencil-alt"></i>
-                <a data-th-href="'/transactions?showTransaction='+${transaction.id}">
+                <i class="fa fa-pencil-alt edit-icon" data-bs-target="#add-edit-transaction" data-bs-toggle="modal"></i>
+                <a data-th-href="'/transaction?showTransaction='+${transaction.id}">
                     <i class="fa fa-arrow-alt-circle-down"></i>
                 </a>
             </td>
@@ -48,7 +48,8 @@
     </table>
 
     <br/>
-    <button class="btn btn-primary" data-bs-target="#add-edit-transaction" data-bs-toggle="modal" type="button">Add
+    <button class="btn btn-primary" data-bs-target="#add-edit-transaction" data-bs-toggle="modal"
+            id="add-transaction-button" type="button">Add
     </button>
 </div>
 

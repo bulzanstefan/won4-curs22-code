@@ -38,7 +38,21 @@ public class Transaction {
         return amount;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public TransactionType getType() {
         return type;
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", type=" + type +
+                ", amount=" + amount +
+                '}';
     }
 }

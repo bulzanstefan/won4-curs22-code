@@ -18,6 +18,11 @@ public class TransactionApiController {
         return service.add(transaction);
     }
 
+    @PutMapping("{id}")
+    Transaction replaceTransaction(@PathVariable int id, @RequestBody Transaction transaction) {
+        return service.replace(id, transaction);
+    }
+
     @DeleteMapping("{id}")
     Transaction deleteTransaction(@PathVariable int id) {
         return service.delete(id)

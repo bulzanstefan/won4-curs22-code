@@ -32,4 +32,9 @@ public class TransactionService {
     public Transaction add(Transaction transaction) {
         return repository.save(transaction);
     }
+
+    public Transaction replace(int id, Transaction transaction) {
+        transaction.setId(id);
+        return repository.save(transaction);
+    }
 }
